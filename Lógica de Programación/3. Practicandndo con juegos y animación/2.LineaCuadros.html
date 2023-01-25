@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<!--  definomos pizarra -->
+<canvas width="600" height="400"></canvas>
+
+<script>
+    // ...........................CUADRADOS ...............................
+    function dibujarCuadro (x,y,color){
+        let pantalla = document.querySelector('canvas'); // conecta mis etiquetas HTML con JavaScript
+        let pincel = pantalla.getContext('2d'); // me trae todo el contenido de mi pizarra canvas en 2 dimensiones
+    
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, 50); // inicia en 0(x), 0(y), 50(x), 50(y)
+        pincel.strokeStyle = "#74c69d"; // permite dibujar una linea, borde
+        pincel.strokeRect(x, y, 50, 50);
+        
+        // pincel.fillRect(50, 0, 50, 50); 
+        // pincel.strokeRect(50, 0, 50, 50);
+    };
+
+    // ...........................SEMAFORO ...............................
+    // dibujarCuadro(0,0,'#c1121f');
+    // dibujarCuadro(0, 50,'#fcf300');
+    // dibujarCuadro(0, 100,'#386641');
+
+    // dibujarCuadro(0,0,'#95d5b2');
+    // dibujarCuadro(50, 0,'#95d5b2');
+    // dibujarCuadro(100, 0,'#95d5b2');
+    
+    //Para mostrar varios cuadros juntos...................................
+    // let x= 0; // 1 forma de hacerlo 
+    // while(x<=600){
+    //     dibujarCuadro(x,0,'#95d5b2');
+    //     x += 50;
+    // };
+    for (let x = 0; x < 600; x+=50) {
+        dibujarCuadro(x,0,'#95d5b2');
+    };
+
+</script>

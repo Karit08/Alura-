@@ -1,0 +1,148 @@
+<meta charset="UTF-8">
+
+Mi primer Prgrama HTML!!!
+
+<!-- El navegador no reconoce los saltos de línea que colocamos en el editor de texto. -->
+
+¿Será esto realmente un programa?
+
+
+<h1>Mi primer Prgrama HTML!!!</h1>
+<H1> Mi primer Programa HTML :) con mayusculas</H1>
+<br>
+¿Será esto realmente un programa? <a href="https://developer.mozilla.org/es/docs/Web/HTML"> Descúbrelo</a>
+
+<p>HTML (Lenguaje de Marcas de Hipertexto, del inglés HyperText Markup Language) es el componente más básico de la Web. 
+    Define el significado y la estructura del contenido web.</p>
+
+<p> ¿Entonces cúal sería un lenguaje de programación? </p>   
+<p> Conoces <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/What_is_JavaScript">JavaScript </a>,
+    es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones complejas en páginas web. </p>
+
+<script>
+    // alert('JavaScript es un lenguaje de programación');
+    // alert('Mi edad es: ...');
+    // alert('?'); //pop-ups
+    // Aqui se está escribiendo codigo HTML dentro de JavaScript
+    document.write('Mi edad es 26 años'); 
+    document.write('<br>');
+    document.write(18 + 2); // 20
+    document.write('<br>');
+    document.write(18 + '2'); //182
+    document.write('<br>');
+    document.write('La suma de las edades de Javis y Karla son...'+ 25+26 ); //La suma de las edades de Javis y Karla son...2526
+    document.write('<br>');
+    document.write('La edades de Javis y Karla son...'+ (25+26) + ' respectivamente'); //La suma de las edades de Javis y Karla son...51
+    document.write('<br>');
+    document.write('La suma de las edades de Javis y Karla son...');
+    document.write('<br>');
+    document.write(25+26);
+    document.write('Año de nacimiento de Javis es...');
+    document.write('<br>');
+    document.write(2022-26);
+    document.write('<br>');
+    document.write('Año de nacimiento de Karla es...');
+    document.write('<br>');
+    document.write(2022-26);
+    document.write('<br>');
+    // document.write(Mi edad es + 12); // error pues todo debe de ir entre ''
+
+    //.........................................3 ......................................
+    var anho= 2022;
+    document.write('Karla tiene: ' + (2022-1996) + ' años');
+    document.write('<br>');
+    document.write('Karla tiene: ' + (anho-1996) + ' años');
+    document.write('<br>');
+    document.write('<br>');
+    anho= 2030;
+    document.write('Itzel tiene: ' + (2030-1996) + ' años');
+    document.write('<br>');
+    document.write('Itzel tiene: ' + (anho-1996) + ' años');
+    document.write('<br>');
+    document.write('<br>');
+
+    promedio= (34+25)/2;
+    document.write('El promedio de las edades es:' + Math.round(promedio) + ' años');
+    document.write('<br>');
+    document.write('<br>');
+    var karlaEdad= 26;
+    var itzelEdad = 25;
+    var nombre1 = 'Karla';
+    var nombre2 = 'Itzel';
+    promedio = (karlaEdad + itzelEdad)/2;
+    document.write('El promedio de las edades de ' + nombre1 + ' e '+ nombre2 + 'es: ' + Math.round(promedio) + ' años');
+    document.write('<br>');
+    document.write('<br>');
+
+    /*  Las variables fueron declaradas con letras mayúsculas, en JavaScript eso causa un error.
+    var EDAD1 = 10;
+    var EDAD2 = "20";
+    var EDAD3 = 12;
+    document.write("La media de las edades es <br>");
+    document.write( (EDAD1 + EDAD2 + EDAD3) / 3);
+    De la forma como fueron declaradas las variables el resultado será: "La media de las edades es 34004".
+    */
+
+   //.........................................4 ......................................
+   var anho= 2025;
+   var saltoLinea= '<br><br><br>';
+   document.write('Itzel tiene: ' + (anho-1996) + ' años');
+   document.write(saltoLinea);
+   document.write('Javier tiene: ' + (anho-1996) + ' años');
+   document.write(saltoLinea);
+   document.write('Karla tiene: ' + (anho-1996) + ' años');
+
+   function saltoDeLinea(){
+    document.write('<br>');
+    document.write('<br>');
+    document.write('<br>');
+   };
+
+   saltoDeLinea();
+   document.write('Función Itzel tiene: ' + (anho-1996) + ' años');
+   saltoDeLinea();
+   document.write('Javier tiene: ' + (anho-1996) + ' años');
+   saltoDeLinea();
+   document.write('Karla tiene: ' + (anho-1996) + ' años');
+   saltoDeLinea();
+
+   function imprimir(frase){
+        document.write(frase);
+        saltoDeLinea();
+   };
+
+   imprimir('1. Haciendo pruebas con funciones anidadas');
+   imprimir('2. Haciendo pruebas con funciones anidadas');
+
+//    function saltarLinea() {
+//         document.write("<br>");
+//     }
+
+//     function imprime(frase) {
+//         document.write(frase);
+//         saltarLinea();
+//     }
+
+    function saltarLinea() {
+     // saltando cinco lineas
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+        document.write("<hr>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }
+
+    function imprime(frase) {
+        document.write("<big>" + frase + "</big>");
+        saltarLinea();
+    }
+
+    var miEdad = 26;
+    var edadHermano = 23;
+
+    imprime("Nuestra diferencia de edad es " + (miEdad - edadHermano));
+
+    
+    
+</script>

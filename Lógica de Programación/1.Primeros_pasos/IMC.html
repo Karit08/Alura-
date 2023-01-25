@@ -1,0 +1,56 @@
+<!-- El índice de masa corporal (IMC) se calcula dividiendo el peso de una persona
+por su altura al cuadrado: IMC = peso / (altura * altura)  -->
+
+<meta charset="UTF-8">
+
+<h1>Calcular IMC</h1>
+
+<script>
+
+	function saltarLinea() {
+		document.write("<br>");	
+		document.write("<br>");	
+		document.write("<br>");	
+	};
+
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+    var pesoKar = 60;
+    var alturaKar= 1.50;
+    var imc = pesoKar/(alturaKar * alturaKar);
+    
+    // El uso de los paréntesis asegura que el cálculo de la altura por altura sea procesado primero, 
+    // para luego dividir el peso por el resultado de (altura*altura).
+
+
+    imprimir("El IMC de Karla es: " + imc);
+    
+    function calcularImc (name, peso, altura){
+        var imc = Math.ceil(peso/(altura*altura));
+        imprimir(`El IMC de ${name} es: ${imc}`);
+    };
+
+    calcularImc('Lupe', 50, 1.65);
+
+    function calcularIMC1 ( peso, altura){
+        return Math.ceil(peso/(altura*altura));
+    };
+    // const kar = calcularIMC1(60, 1.50);
+    // const titis = calcularIMC1(10, .30);
+    function promedio(p1, p2){
+        return (p1 + p2)/2;
+    };
+    // const prom = promedio(kar, titis);
+    // imprimir('El promedio de los pesos de Kar y Titis es: ' + prom);
+
+    // Forma de automatizar el código.
+    var nombre= prompt("¿Cúal es su nombre?");
+    var pesoInf= prompt(nombre + ', ¿Cúal es su peso?');
+    var alturaInf = prompt(nombre + ', ¿Cúal es su altura?');
+
+    imprimir(nombre + ' tu IMC es: ' + calcularIMC1(pesoInf, alturaInf));
+
+</script>
+

@@ -1,0 +1,66 @@
+<!-- Encontramos algunos datos relevantes en internet sobre la evolución de uso de navegadores o exploradores 
+en los últimos 10 años, el resultado fue el siguiente.
+
+En 2009: 6% Chrome, 47% Firefox, 41% Internet Explorer/Edge*, 3% Safari, 3% Otros.
+En 2019: 81% Chrome, 9% Firefox, 3% Internet Explorer/Edge*, 3% Safari, 4% Otros. -->
+
+
+<canvas width="600" height="400"></canvas>
+<img src="https://caelum-online-public.s3.amazonaws.com/1729-logica-de-programacion-3/1739-Logica+de+Programacion+parte3_Logica+en+la+practica-imagen2.3-grafico_barras-2.png" alt="Ejm. Grafico">
+
+<script>
+    // ...........................RECTANGULO ...............................
+    // function dibujarRectangulo(x,y,color,altura){
+    //     var pantalla = document.querySelector("canvas");
+    //     var pincel = pantalla.getContext("2d");
+    //     pincel.fillStyle = color;
+    //     pincel.fillRect(x,y,50,altura); 
+    //     pincel.strokeStyle = "black";
+    //     pincel.strokeRect(x,y,50,altura);
+    // };
+
+    // dibujarRectangulo(50,50,"green",Math.round(Math.random()*50));
+    // La llamada a la función tiene todos los parámetros en el orden y forma correcta, 
+    // el último parámetro que es el valor de la altura está usando dos fórmulas matemáticas que ya hemos visto, 
+    // Math.round() que redondea a un entero el número y Math.random() que nos devuelve un número aleatorio entre 
+    // 0 y 1, luego lo multiplicamos por 50 para poder obtener un número entre 0 y 50.
+
+    var colores = ["blue","green","yellow", "red","gray"];
+    var serie2009 = [6,47,41,3,3];
+    var serie2019 = [81,9,3,3,4];
+
+    function dibujarRectangulo(x, y, base, altura, color) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+    };
+
+    function escribirTexto(x , y, texto) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);    
+    }
+
+    function dibujarBarra(x, y, serie, colores, texto) { //250, 50, serie2009, colores, "2009")
+
+        escribirTexto(x + 30, y - 15, texto);
+
+        var sumaAltura = 0;
+        for (var i = 0; i < serie.length; i++) {
+            var altura = serie[i];
+            dibujarRectangulo(x, y + sumaAltura, 100, altura, colores[i]);
+            sumaAltura += altura;
+        }
+    };
+
+    dibujarBarra(250, 50, serie2009, colores, "2009");
+    dibujarBarra(450, 50, serie2019, colores, "2019");
+
+</script>

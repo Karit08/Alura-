@@ -1,0 +1,55 @@
+/* body{
+    
+} */
+
+.titulo_Principal{
+    padding-left: 30px;
+}
+
+.Principal{
+    background: antiquewhite;
+    padding: 20px;
+}
+
+#Barbería{
+    width: 100%;
+    align-items: center;
+}
+
+.titulos{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+em strong{
+    color: tomato;
+}
+
+#mision{
+    font-size: 20px;
+}
+
+.Diferencial{
+    background: #FFFFFF;
+    padding: 30px;
+}
+
+.ULitem{
+    display: inline-block; 
+    /* permite que podamos ajustar el contenido del bloque a solo el espacio necesario */
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.item{
+    font-style: italic;
+}
+
+.imgD{
+    width: 50%;
+    text-align: center;
+}

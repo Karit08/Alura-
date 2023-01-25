@@ -1,0 +1,37 @@
+<!-- El índice de masa corporal (IMC) se calcula dividiendo el peso de una persona
+por su altura al cuadrado: IMC = peso / (altura * altura)  -->
+
+<meta charset="UTF-8">
+
+<h1>Calcular IMC</h1>
+
+<script>
+
+	function saltarLinea() {
+		document.write("<br>");	
+		document.write("<br>");	
+		document.write("<br>");	
+	};
+
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+
+    function calcularIMC1 ( peso, altura){
+        return Math.ceil(peso/(altura*altura));
+    };
+
+    let nombre= prompt("¿Cúal es su nombre?");
+    let pesoInf= prompt(nombre + ', ¿Cúal es su peso?');
+    let alturaInf = prompt(nombre + ', ¿Cúal es su altura?');
+    let imcC= calcularIMC1(pesoInf, alturaInf);
+
+    imprimir(nombre + ' tu IMC es: ' + calcularIMC1(pesoInf, alturaInf));
+    if(imcC < 18.5) imprimir('Tu IMC se encuentra por debajo de lo recomendado');
+    if(imcC >= 18.5 && imcC < 25) imprimir('Tu IMC está dentro del intervalo normal');
+    if( imcC >= 25 && imcC < 30) imprimir('Tu IMC es considerado como sobrepeso');
+
+
+</script>
+

@@ -1,0 +1,331 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    background-color: #BBB;
+    padding: 20px 0;
+}
+
+.caja{
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 50px;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a{
+    text-transform: uppercase; 
+    color: #000;
+    font-weight: bold; 
+    /* negrito */
+    font-size: 22px;
+    text-decoration: none;
+    
+}
+
+nav a:hover{
+    color: #ff7d00;
+    text-decoration: underline;
+}
+
+.productos{
+    width: 940px;
+    margin: 0 auto;
+    /* margen superior e inferior 0 y lateral auto */
+    padding: 50px;
+}
+
+.productos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    /* background-color: aqua; */
+    border: 2px solid #000;
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: #000; */
+    border-radius: 10px;
+}
+
+.productos li:hover{
+    border-color: #15616d;
+}
+
+.productos li:active{
+    border-color: #78290f;   
+}
+
+.productos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.productos li:hover h2{
+    font-size: 33px;
+}
+
+.descripcion{
+    font-size: 18px;
+}
+
+.precio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    background: url(imagenes/bg.jpg);
+    padding: 40px;
+}
+
+.copy{
+    color: #fff;
+    font-size: 13px;
+    margin: 20px;
+}
+
+/* main{
+    width: 940px;
+    margin: 0 auto;
+} */
+
+form{
+    margin:40px 0;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+    /* arriba derecha abajo */
+}
+
+.padron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    /* superior/inferior derecha/izquierda */
+    width: 50%;
+}
+
+.checkbox{
+    margin: 20px 0;
+}
+
+/* <p class="parrafo"> JERARQUIA.........................................
+
+p {
+    color: blue;
+}
+
+p.parrafo {
+    color: red;
+}
+
+.parrafo {
+    color: purple;
+} */
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff7d00;
+    border: none;
+    border-radius: 5px;
+    /* transition: 1s background;  */
+    transition: 1s all; 
+    cursor: pointer;
+}
+
+.enviar:hover{
+    background: #78290f;
+    transform: scale(1.05);
+    /* transform: rotate(70deg); */
+    /* transform: scale(1.2) rotate(800deg); */
+}
+
+table{
+    margin: 40px;   
+}
+
+thead{
+    background: #555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th{
+    border: 1px solid #000;
+    padding: 8px 15px;
+}
+
+/*CSS para HOME */
+.Barbería{
+    width: 100%;
+}
+
+/* main >p{
+    background: red;
+}
+
+img + p {
+    background: #15616d;
+}
+
+img ~ p{
+    background: #89dce9;
+}
+
+.Principal p:not(#mision){
+    background: #133236;
+} */
+
+.Principal{
+    padding: 3em;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.titulosPrincipal{
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+    /* color: rgba(218,0,0,0.3); */
+}
+
+/* .titulosPrincipal::first-letter{
+    font-weight: bold;
+}
+
+.titulosPrincipal::before{
+    content: '[';
+}
+
+.titulosPrincipal::after{
+    content: ']';
+} */
+
+p::first-line{
+    font-style: italic;
+}
+
+.Principal p{
+    margin:  0 0 1em;
+}
+.Principal strong{
+    font-weight: bold;
+}
+
+.Principal em{
+    font-style: italic;
+}
+
+.utensilios{
+    /* width: calc(40% - (26px *4)); */
+    width: 120px;
+    /* calcula el tamaño de la pagina y le resta los pixeles */
+    float: left;
+    border-radius: 5px;
+    margin: 0 20px 20px 0;
+}
+
+.mapaContenido{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.map{
+    /* margin: 3em 0; */
+    background: linear-gradient(#fefefe,#888);
+}
+
+.map p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.Diferencial{
+    padding: 3em 0;
+    background: #888;
+}
+
+.contenidoDiferenciales{
+    width: 650px;
+    margin: 0 auto;
+}
+
+.listaDiferenciales{
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.item{
+    line-height: 1.2;
+}
+
+.item::before{
+    content: '✪';
+}
+
+.item:first-child {
+    font-weight: bold;
+}
+
+.imgenesDiferenciales{
+    width: 55%;
+    border-radius: 8px;
+    transition: 400ms;
+    box-shadow: -10px 10px 10px #000;
+}
+
+.imgenesDiferenciales:hover{
+    opacity: 30%;
+}
+
+.video {
+    width: 600px;
+    margin: 1em auto;
+}
+
+@media screen and (max-width:480px){
+    /* body{
+        background: #15616d;
+    }     */
+    h1{
+        text-align: center;
+    }
+
+    nav{
+        position: static ;
+    }
+    .caja, .Principal, .mapaContenido, .contenidoDiferenciales, .video{
+        width: auto;
+    }
+
+    .listaDiferenciales, .imgenesDiferenciales{
+        width: 100%;
+    }
+}

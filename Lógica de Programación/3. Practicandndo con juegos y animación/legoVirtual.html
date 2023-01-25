@@ -1,0 +1,32 @@
+<!-- Para facilitar un poco, las dimensiones de nuestros rectángulos (base x altura) en pixeles es el siguiente:
+
+Rectángulo 1: 350, 300 (cabeza).
+Rectángulos 2 y 3: 90, 90 (ojos).
+Rectángulo 4: 70, 100 (nariz).
+Rectángulos 5 y 6: 40, 110 (parte de la boca). Su canvas debe tener el tamaño de 600 x 400 pixeles. -->
+
+<canvas width="600" height="400">
+</canvas>
+
+<script>
+    let pantalla = document.querySelector('canvas');
+    let pincel = pantalla.getContext('2d');
+    
+    //fondo
+    pincel.fillStyle = '#006d77';
+    pincel.fillRect(0, 0, 600, 400); // inicia en 0(x), 0(y), termina 600(x), 400(y)
+    //cabeza
+    pincel.fillStyle = '#83c5be';
+    pincel.fillRect(125, 50, 350 ,300); // inicia en 125(x), 50(y), de 350(x), 300(y)
+    // ojos
+    pincel.fillStyle = 'black';
+    pincel.fillRect(175, 110, 90, 90);
+    pincel.fillRect(335, 110, 90, 90);
+    //nariz
+    pincel.fillRect(265, 200, 70, 100);
+    //boca
+    pincel.fillRect(225, 240, 40, 110);
+    pincel.fillRect(335, 240, 40, 110);
+
+
+</script>

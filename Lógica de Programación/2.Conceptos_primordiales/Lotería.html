@@ -1,0 +1,88 @@
+<!-- Desafíos:
+
+1 – Crea una función de lotería que reciba un número n y sortee un número entre 0 a n, retornando ese valor. 
+De esta forma, en vez de escribir var numeroPensado = Math.round(Math.random()*n);, 
+escribirás var numeroPensado = sorteo(n);. Realiza esa modificación, creando una nueva 
+función y utilízala de forma correcta.
+
+2 – Hacer que tu juego exhiba, cuando el usuario falle el intento, si el número lanzado era mayor o menor al 
+número pensando por el programa. -->
+
+<meta charset="UTF-8">
+<h1>PROGRAMA JUEGO DE ADIVINACION </h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }  
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    //Adivina el numero 
+    var numeroPensado1 = Math.round(Math.random()*10);
+    var numeroLanzado1 = parseInt(prompt("Ingrese un número entre 0-10"))
+
+    if (numeroPensado1 == numeroLanzado1){
+        imprimir("Usted acertó")
+    } else {
+        imprimir("Usted se equivoco, el número pensado era " + numeroPensado1);    
+    };
+
+    // While
+    function sortearNumero() {
+    return Math.round(Math.random() * 100);
+    }   
+
+    var numeroPensado3 = sortearNumero();
+    var numeroLanzado3 = parseInt(prompt("Ingrese un número entre 0-10: "));
+    if(numeroLanzado3  == numeroPensado3) {
+        imprimir("Uau! Vos acertaste, pues yo pensé en el número " + numeroPensado3);
+    } else {
+        var contador = 1;
+        while(contador <= 10) {
+            imprimir("¡Se acabó, vos erraste!");
+            contador = contador +1;
+        };
+    };
+
+    alert('Adivina el numero ----------------------');
+    var numeroPensado = Math.round(Math.random()*10);
+    let intentos=3;
+    let count = 0;
+    while(count <= intentos){
+        var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-10"));
+        if(numeroPensado == numeroLanzado){
+            alert("Usted acertó al número");
+            break; // interrumpe la ejecución, el break forzará la salida del while
+        }else{
+            if (numeroLanzado > numeroPensado){
+                alert("Ustes se equivoco, el número pensado era menor que su número");
+            } else{
+            return alert("Usted se equivoco, el número pensado era mayor que su número");
+            }
+        };
+        count++;
+        if(numeroPensado === numeroLanzado){
+            imprimir('Usted acertó, en el intento '+count+ 'el numero pensado era '+ numeroPensado);
+        }else{
+            imprimir('El número pensado era: '+numeroPensado);
+        }
+    }
+    
+    // imprime estrellas 
+    for (let line = 1; line <=3; line++) {
+        for (let colum = 0; colum <= 10 ; colum++) {
+            document.write('*');
+        };
+        document.write("<br>"); 
+    };
+    document.write("<br>"); 
+    document.write("<br>"); 
+    imprimir('-------------------FIN-------------------');
+</script>

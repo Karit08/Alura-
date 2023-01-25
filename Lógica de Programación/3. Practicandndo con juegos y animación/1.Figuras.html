@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+    let pantalla = document.querySelector('canvas'); // conecta mis etiquetas HTML con JavaScript
+    let pincel = pantalla.getContext('2d'); // me trae todo el contenido de mi pizarra canvas en 2 dimensiones
+    
+    // pincel.fillStyle = '#a8dadc';
+    // pincel.fillRect(0, 0, 600, 400); // inicia en 0(x), 0(y), 600(x), 400(y)
+
+    // graficar Rectangulo------------------------------------------------------
+    pincel.fillStyle = '#003e1f';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = '#d90429';
+    pincel.fillRect(400, 0, 600, 400);
+
+    // graficar Triangulo------------------------------------------------------
+    pincel.fillStyle='#e29578';
+    pincel.beginPath(); //inicia un nuevo camino
+    pincel.moveTo(300, 200); // muevete al centro x y 
+    pincel.lineTo(200, 400); // (x,y) una vez que estas ahi dibuja una linea a donde quiero desplazar, en este caso 
+    // quiero que dibuje una linea del centro a la esquina inferior izquierda de la bandera. / 
+    pincel.lineTo(400, 400); // (x,y) una vez que estas ahi dibuja una linea a donde quiero desplazar, en este caso 
+    // quiero que dibuje una linea del centro a la esquina inferior derecha de la bandera. \ 
+    pincel.fill(); // me rellena lo que hice
+
+    // graficar Circulo------------------------------------------------------
+    pincel.fillStyle='#83c5be';
+    pincel.beginPath(); //inicia un nuevo camino
+    pincel.arc(300, 200, 50, 0, 2*3.14); // en este caso quiero que haga un circulo
+    // comienza en (300x, 200y, tamaño de radio 50, angulo inicial, angulo final 2*pi);
+    // pincel.arc(300, 200, 50, 0, 2 * Math.PI);
+    pincel.fill();
+
+</script>

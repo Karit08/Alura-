@@ -1,0 +1,20 @@
+<!-- Usando la instrucción while, imprime todos los números pares del 1 al 100 y al final imprime la palabra "FIN". -->
+
+<meta charset="UTF-8">
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    var contador = 2;
+    while(contador <= 100) {
+        imprimir(contador);
+        contador = contador + 2; // incrementar de dos en dos
+    }
+    imprimir("FIN");
+</script>

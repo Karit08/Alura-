@@ -1,0 +1,35 @@
+<!-- Utiliza como punto de referencia para el centro de la flor (círculo rojo) las coordenadas X=300 y Y=200. -->
+
+<canvas width="600" height="400"></canvas>
+<img src="https://caelum-online-public.s3.amazonaws.com/1729-logica-de-programacion-3/1739-Logica+de+Programacion+parte3_Logica+en+la+practica-imagen2.1-flor.png" alt="flor">
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "#edf2fb";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCirculo(x, y, radio, color) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2*3.14);
+        pincel.fill();
+    };
+
+    // Uno por uno 
+    // dibujarCirculo(300, 200, 20, '#1d4e89');
+    // dibujarCirculo(300, 240, 20, '#f79256');
+    // dibujarCirculo(260, 200, 20, '#fbd1a2');
+    // dibujarCirculo(300, 160, 20, '#7dcfb6');
+    // dibujarCirculo(340, 200, 20, '#00b2ca');
+
+    function dibujarFlor(x,y) {
+        dibujarCirculo(x, y, 20, '#1d4e89');
+        dibujarCirculo(x, y+40, 20, '#f79256');
+        dibujarCirculo(x, y-40, 20, '#7dcfb6');
+        dibujarCirculo(x-40, y, 20, '#fbd1a2');
+        dibujarCirculo(x+40, y, 20, '#00b2ca');
+    };
+    dibujarFlor(300,200);
+</script>

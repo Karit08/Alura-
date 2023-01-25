@@ -1,0 +1,157 @@
+<!-- El desafío de este ejercicio es poder cambiar el color del pincel, haciendo clic en una paleta de colores 
+que vamos a tener en el extremo izquierdo superior de nuestro canvas, vamos a disponibilizar 3 colores para 
+que el usuario pueda escoger el color que quiera en su pincel, los colores que usaremos serán el rojo, verde 
+y azul (red, green y blue). -->
+
+<!-- Por lo tanto, cuando el usuario haga clic en el cuadrado verde, el pincel diseñará círculos verdes, cuando haga
+ clic en el rojo, diseñará círculos rojos, y así sucesivamente, recordando que el color inicial (default) es el azul. 
+ Un punto importante a tomar en cuenta es que debemos restringir el área de la paleta para no poder diseñar nada 
+ encima de ella. -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+    // let pantalla = document.querySelector('canvas'); 
+    // let pincel = pantalla.getContext('2d');
+    // pincel.fillStyle = '#f2cc8f';
+    // pincel.fillRect(0, 0, 600, 400); 
+
+    // const colors= ['#20a4f3', '#2ec4b6', '#ff0a54'];
+    // let colorActual= colors[0];
+
+    // pincel.fillStyle = colors[2];
+    // pincel.fillRect(0, 0, 50, 50);
+    // pincel.fillStyle = colors[1];
+    // pincel.fillRect(50, 0, 50, 50);
+    // pincel.fillStyle = colors[0];
+    // pincel.fillRect(100, 0, 50, 50);
+
+    // let puedoDibujar = false;
+
+    // function habilitarDibujar() {
+    //     puedoDibujar = true;
+    // };
+
+    // function deshabilitarDibujar() {
+    //     puedoDibujar = false;
+    // };
+
+    // //Función para capturar movimiento del MOUSE..................................................
+    // function capturarMovimientoDelMouse(evento){
+    //     let x = evento.pageX - pantalla.offsetLeft;
+    //     let y = evento.pageY - pantalla.offsetTop;
+    //     if (puedeDisenharArea(x,y)){
+    //         dibujarCirculo(x,y);
+    //     };
+    // };
+    
+    // //Función para delimitar el área.............................................................
+    // function puedeDisenharArea(xCoordenada,yCoordenada){
+    //     if ((xCoordenada >= 0 && (xCoordenada < (3*50+5)) && 
+    //         (yCoordenada >=0 && yCoordenada < (50+5)))) {
+    //             return false;
+    //     } else{
+    //         return true;
+    //     };
+    // };    
+
+    // // Dibuja el circulo ........................................................................
+    // function dibujarCirculo(x,y) {
+    //     if(puedoDibujar) {
+    //         pincel.fillStyle = colorActual;
+    //         pincel.beginPath();
+    //         pincel.arc(x, y, 5, 0, 2 * 3.14);
+    //         pincel.fill();
+    //     };
+    // };
+
+    // // Seleccionar el color ......................................................................
+    // function seleccionarColor(evento){
+    //     x = evento.pageX - pantalla.offsetLeft;
+    //     y = evento.pageY - pantalla.offsetTop;
+    //     if(x >= 0 && x < 50 && y >=0 && y<=50){
+    //         colorActual= colors[2];
+    //     } else if(x >= 50 && x < 100 && y >=0 && y<=50){
+    //         colorActual= colors[1];
+    //     } else if(x >= 100 && x < 150 && y >=0 && y<=50){
+    //         colorActual= colors[0];
+    //     };
+    // };
+
+    // // dibujarPaletaColores();
+    // pantalla.onmousemove = capturarMovimientoDelMouse;
+    // pantalla.onmousedown = habilitarDibujar;
+    // pantalla.onmouseup = deshabilitarDibujar;
+    // pantalla.onclick = seleccionarColor;
+
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+    var color = "blue";
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    //
+    function dibujarCuadrado(x,y,color){ 
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        pincel.fillStyle = color;
+        pincel.fillRect(x,y,50,50);
+        }
+
+        dibujarCuadrado(0,0,"red")
+        dibujarCuadrado(50,0,"green")
+        dibujarCuadrado(100,0,"blue")
+
+    var puedoDibujar = false;
+
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+
+            if(x < 155 && y < 55) return; //se se sumo el radio
+            pincel.fillStyle =color;
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+    function cambiarColor(evento) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+
+            if(x <= 50 && y < 50) {
+                color = "red";
+
+            }
+            if(x >50 && x <= 100 && y < 50){
+                color = "green";
+            }
+            if(x > 100 && x <= 150 && y < 50 ){
+                color = "blue";
+            }
+
+    }
+     pantalla.onclick = cambiarColor;
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    
+    
+</script>

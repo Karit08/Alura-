@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+    <h3>Calcular puntos de un equipo de FUTBOL</h3>
+    
+<script>
+    function saltarLinea() {
+     // salto de lineas
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    };
+
+    function imprime(frase) {
+        document.write("<big>" + frase + "</big>");
+        saltarLinea();
+    };
+
+    // let victoria= prompt('¿Cuantas VICTORIAS tuvo el equipo?'); // prompt devuelve un string
+    // let empate = prompt('Informe la cantidad de EMPATE que tuvo el equipo');
+    
+    let victoria = parseInt(prompt('¿Cuantas VICTORIAS tuvo el equipo?'));
+    let empate = parseInt(prompt('Informe la cantidad de EMPATE que tuvo el equipo'));
+    let puntosAntes = parseInt(prompt('Informe los PUNTOS del Año pasado del equipo'));
+    // puntosTotal = victoria * 3 + Number(empate); //cada victoria vale 3 puntos y un empate vale 1 punto
+    puntosTotal = victoria * 3 + empate;
+    imprime('El total de puntos del equipo es: ' + puntosTotal);
+    if(puntosTotal > puntosAntes) imprime('Este año al equipo le ha ido muy bien');
+    if(puntosTotal < puntosAntes) imprime('El equipo no esta en su mejor momento');
+    if( puntosAntes === puntosTotal) imprime('El equipo esta igual que el año pasado, ¡necesita mejorar!');
+    // let anhoMundial =1930;
+    let anhoMundial= parseInt(prompt('Ingresa el año limite de mundiales que deseas consultar'));
+    while(anhoMundial < 2020){
+        imprime('Hubo mundial en la FIFa en el año' + anhoMundial);
+        anhoMundial= anhoMundial+4;
+    };
+    
+
+
+</script>
